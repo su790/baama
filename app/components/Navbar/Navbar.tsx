@@ -37,10 +37,10 @@ const Navbar = () => {
             hidden
             md:flex"
               >
-                <div className="cursor-pointer font-semibold text-sm hover:text-gray-600">
+                <div className="cursor-pointer font-semibold  sm text-sm hover:text-gray-600">
                   Services
                 </div>
-                <div className="cursor-pointer font-semibold text-sm hover:text-gray-600">
+                <div className="cursor-pointer font-semibold  sm text-sm hover:text-gray-600">
                   About us
                 </div>
                 <div className="cursor-pointer font-semibold text-sm hover:text-gray-600">

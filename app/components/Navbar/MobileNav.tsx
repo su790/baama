@@ -1,16 +1,17 @@
 "use client";
 import { GiHamburgerMenu } from "react-icons/all";
-import { Transition } from "@headlessui/react";
+import { Menu, Transition } from "@headlessui/react";
 import { Disclosure } from "@headlessui/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import Avatar from "@/app/components/Avatar";
 import React, { Fragment, useState } from "react";
+import MenuItem from "@/app/components/Navbar/MenuItem";
 
 function MobileNav() {
   return (
     <div className="block md:hidden">
-      <Disclosure as="nav">
-        <Disclosure.Button className=" inline-felx focus:ring-2 focus:ring-inset focus:ring-white  items-center peer justify-center rounded-md p-2 font-semibold text-sm ">
+      <Menu as="nav">
+        <Menu.Button className=" inline-felx focus:ring-2 focus:ring-inset focus:ring-white  items-center peer justify-center rounded-md p-2 font-semibold text-sm ">
           <div
             className="
   p-1 .5
@@ -27,7 +28,7 @@ function MobileNav() {
             <AiOutlineMenu />
             <div className="font-semibold text-sm">Menu</div>
           </div>
-        </Disclosure.Button>
+        </Menu.Button>
         <Transition
           as={Fragment}
           enter="transition ease-out duration-100"
@@ -37,22 +38,23 @@ function MobileNav() {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Disclosure.Panel
-            as="div"
-            className="absolute w-full h-screen flex flex-col gap-6 bg-amber-50 top-20 p-4 right-0 items-center"
+          <Menu.Items
+            className="absolute
+            rounded-xl
+            shadow-md
+            w-full
+            bg-white
+            right-0
+            top-20
+            text-sm"
           >
-            <div className="cursor-pointer font-semibold text-sm hover:text-gray-600">
-              Services
+            <div className="flex  flex-col items-center cursor-pointer">
+              <MenuItem position={"center"} label="Login" />
+              <MenuItem position={"center"} label="Sign Up" />
             </div>
-            <div className="cursor-pointer font-semibold text-sm hover:text-gray-600">
-              About us
-            </div>
-            <div className="cursor-pointer font-semibold text-sm hover:text-gray-600">
-              Contact
-            </div>
-          </Disclosure.Panel>
+          </Menu.Items>
         </Transition>
-      </Disclosure>
+      </Menu>
     </div>
   );
 }

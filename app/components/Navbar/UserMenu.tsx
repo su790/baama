@@ -45,8 +45,8 @@ function UserMenu() {
             text-sm"
         >
           <div className="flex flex-col cursor-pointer">
-            <MenuItem label="Login" />
-            <MenuItem label="Sign Up" />
+            <MenuItem position={"right"} label="Login" />
+            <MenuItem position={"right"} label="Sign Up" />
           </div>
         </Menu.Items>
       </Transition>
